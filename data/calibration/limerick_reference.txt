@@ -1,0 +1,109 @@
+# Reference Limericks for Calibration (Section 10)
+# ~15 real human limericks, primarily from Edward Lear and classic sources.
+# Format: lines starting with # are metadata, poem lines follow.
+# Poems separated by blank lines.
+
+# There was an Old Man with a beard — Edward Lear
+There was an Old Man with a beard
+Who said it is just as I feared
+Two Owls and a Hen
+Four Larks and a Wren
+Have all built their nests in my beard
+
+# There was a Young Lady of Ryde — Edward Lear
+There was a Young Lady of Ryde
+Whose shoe strings were seldom untied
+She purchased some clogs
+And some small spotted dogs
+And frequently walked about Ryde
+
+# There was an Old Man in a tree — Edward Lear
+There was an Old Man in a tree
+Who was horribly bored by a Bee
+When they said does it buzz
+He replied yes it does
+It's a regular brute of a Bee
+
+# There was an Old Man of Nantucket — Anonymous
+There was an Old Man of Nantucket
+Who kept all his cash in a bucket
+His daughter named Nan
+Ran away with a man
+And as for the bucket Nan took it
+
+# A wonderful bird is the pelican — Dixon Lanier Merritt
+A wonderful bird is the pelican
+His bill will hold more than his belican
+He can take in his beak
+Enough food for a week
+But I'm damned if I see how the helican
+
+# There was an Old Man who supposed — Edward Lear
+There was an Old Man who supposed
+That the street door was partially closed
+But some very large rats
+Ate his coats and his hats
+While that futile old gentleman dozed
+
+# There was a Young Lady whose chin — Edward Lear
+There was a Young Lady whose chin
+Resembled the point of a pin
+So she had it made sharp
+And purchased a harp
+And played several tunes with her chin
+
+# There once was a man from Blackheath — Anonymous
+There once was a man from Blackheath
+Who sat on his set of false teeth
+Said he with a start
+Oh Lord bless my heart
+I have bitten myself underneath
+
+# There was an Old Person of Dutton — Edward Lear
+There was an Old Person of Dutton
+Whose head was as small as a button
+So to make it more great
+He enlarged it with slate
+That eclectic Old Person of Dutton
+
+# A flea and a fly in a flue — Anonymous
+A flea and a fly in a flue
+Were imprisoned so what could they do
+Said the fly let us flee
+Said the flea let us fly
+So they flew through a flaw in the flue
+
+# There was an old man from Peru — Anonymous
+There was an old man from Peru
+Who dreamed he was eating his shoe
+He woke in the night
+In a terrible fright
+And found it was perfectly true
+
+# There was an Old Man of the coast — Edward Lear
+There was an Old Man of the coast
+Who placidly sat on a post
+But when it was cold
+He relinquished his hold
+And called for some hot buttered toast
+
+# There was an Old Man of the Dee — Edward Lear
+There was an Old Man of the Dee
+Who was sadly annoyed by a Flea
+When he said I will scratch it
+They gave him a hatchet
+Which grieved that Old Man of the Dee
+
+# There was a Young Lady of Norway — Edward Lear
+There was a Young Lady of Norway
+Who casually sat in a doorway
+When the door squeezed her flat
+She exclaimed what of that
+This courageous Young Lady of Norway
+
+# There was an Old Man on some rocks — Edward Lear
+There was an Old Man on some rocks
+Who shut his wife up in a box
+When she said let me out
+He exclaimed without doubt
+You will pass all your life in that box

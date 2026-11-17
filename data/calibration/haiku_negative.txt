@@ -1,0 +1,29 @@
+# Negative Control Haikus for Calibration
+# 5 deliberately weak haikus: correct 5-7-5 syllable counts
+# but bland, cliched, or incoherent content.
+# Used to verify the fitness pipeline separates quality tiers.
+
+# Bland weather report
+The sun is shining
+The sky is very blue now
+It is a nice day
+
+# Generic statement
+I like to eat food
+Food is something that I eat
+Eating food is good
+
+# Incoherent nonsense (valid 5-7-5)
+Purple dogs can fly
+My refrigerator sings
+Tables eat the moon
+
+# Maximum cliche
+Roses are so red
+Violets are very blue
+Sugar is so sweet
+
+# Emotionally flat
+I woke up today
+I went outside to the store
+Then I came back home

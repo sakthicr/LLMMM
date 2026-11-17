@@ -1,0 +1,27 @@
+run_id,ea,poem_type,emotion,final_F,generations_used,best_poem
+ga_haiku_joy_4e74c2a3,ga,haiku,joy,0.7750,3,Tiny hands reach out | Glowing dots dance in night air | Laughter sparks like stars
+nsga2_limerick_Sorrow_29d9cad1,nsga2,limerick,Sorrow,0.8407,4,"By the tracks the dusk draped its gray veil | He clasped a torn letter, his breath turned pale | No words left to speak | No tears left to leak | The engine’s sigh mourned the sorrowful rail"
+ga_limerick_Sorrow_102c8c40,ga,limerick,Sorrow,0.8824,3,"At twilight’s hush the whistle cries, | A soldier's kiss beneath grey skies, | His pulse now thin, | His thoughts within, | The train departs with whispered sighs."
+ga_limerick_Sorrow_9d2d8814,ga,limerick,Sorrow,0.8562,5,"Beneath waning light the platform did weep, | Grey smoke rose, a veil for the deep, | He folded his coat, | With a tremor of throat, | As the iron beast thundered, his promise to keep."
+ga_haiku_Fear_144a75a8,ga,haiku,Fear,0.8000,3,"Dark lane, silent pulse | Footsteps mirror my own tread | Heart drums in the void"
+nsga2_haiku_Fear_ad80ed04,nsga2,haiku,Fear,0.8000,3,"Empty street, cold fog | Footfalls sync, a silent drum | Panic claws my throat"
+nsga2_haiku_Fear_24f3cf25,nsga2,haiku,Fear,0.8000,3,"Dark lane, heart pounding | A mirror stride behind me | Silence cracks like glass"
+ga_haiku_Sorrow_ffac0b64,ga,haiku,Sorrow,0.8000,3,Faded frame lies still | Edges curl like quiet tears | Forgotten drawer sighs
+nsga2_haiku_Sorrow_96240585,nsga2,haiku,Sorrow,0.7853,3,"Paper curls like tears, | forgotten faces linger, | loneliness folds."
+ga_limerick_Fear_b7d39156,ga,limerick,Fear,0.7930,3,"When thunder cracked the night, he fled, | He crawled beneath the bed, heart bled, | A whisper crept— | A clawed foot kept— | And eyes of darkness stared instead. | The storm roared loud while he did hide, | Under the mattress, trembling, wide, | A sigh, a growl— | His pulse did howl— | When something else was lying inside. | He shivered as the rain beat fast, | Beneath the springs his fear was cast, | A low, cold hiss— | A shadow’s kiss— | A beast that’d claimed the space at last. | The lightning flashed, the floorboards moaned, | He froze beneath the sheets, intoned, | A hiss, a grin— | His skin grew thin— | For something worse than storm had grown."
+nsga2_limerick_Sorrow_3971360e,nsga2,limerick,Sorrow,0.8115,4,"At twilight the whistle sighs soft and bleak | A soldier bends, his oath now torn and weak | Steam veils the night | His eyes lose the light | And the tracks hum onward with grief’s quiet streak"
+nsga2_limerick_Sorrow_3407db46,nsga2,limerick,Sorrow,0.7892,5,"Beneath iron arches the shadows conspire, | He boards with a sigh, his eyes full of fire, | Will he see the sun? | The tracks hum, undone, | While sorrow drifts on the cold, mournful choir."
+nsga2_limerick_Sorrow_de5ca899,nsga2,limerick,Sorrow,0.8766,3,"Steam curled like ghosts as the night grew dim, | He whispered his oath on a trembling limb, | The rails sang a moan, | His heart turned to stone, | And the station awoke to a mournful hymn."
+ga_limerick_Sorrow_93cbbf7c,ga,limerick,Sorrow,0.7179,5,"At the station he lingers, his breath a thin thread, A | While the wind writes his name on the dead, A | The crowd turns to mist, | The night clenches its fist, | And the whistle cries out what words never said."
+ga_limerick_Sorrow_18dd12e2,ga,limerick,Sorrow,0.8710,5,"The rails sang low, a dirge of steel and rain, | A weary clasp let go, a silent pain, | The shadows fell, | His story’s knell, | Will daylight’s echo answer his refrain?"
+ga_limerick_Fear_5e93427d,ga,limerick,Fear,0.8798,5,"When thunder cracked the night and shook the floor, | He hid beneath the springs, his pulse a roar, | A shiver, a hiss— | A stare from abyss— | A phantom smiled, its teeth like jagged shore."
+nsga2_limerick_Fear_f8e80f06,nsga2,limerick,Fear,0.9106,4,"When thunder cracked loud through the night, | He slid beneath sheets, trembling with fright, | A soft rustle near, | A cold, hollow sneer, | And a pale hand clasped his wrist in the light."
+ga_limerick_Joy_7356698e,ga,limerick,Joy,0.8516,4,"A clumsy baker in wedding attire, | Set his tiered marvel to rise higher. | It tumbled, then sang, | A sweet, joyous clang, | Now guests cheer the crumble, their hearts on fire."
+nsga2_limerick_Joy_43c13e81,nsga2,limerick,Joy,0.8070,3,"Bumbling baker, his whisk a wild kite, | Raised a cake that could out‑shine any light. | It toppled with cheer, | A sweet avalanche near, | And the guests ate the joy, every bite pure delight."
+ga_haiku_Joy_84a00f21,ga,haiku,Joy,0.7917,5,Morning gold spills bright | Tiny toes dance on soft grass | Hearts lift with the light
+ga_haiku_Joy_7fca053d,ga,haiku,Joy,0.7750,4,First light on the rise | Bare feet splash through silvered grass | Cheer blooms on the wind
+nsga2_haiku_Joy_51d79af3,nsga2,haiku,Joy,0.8000,4,"Soft dew hugs each step | Hilltop glows with laughing eyes | Sun dances, carefree"
+ga_haiku_Fear_aba15568,ga,haiku,Fear,0.8000,4,"Empty lane, breath held | Shadow steps echo my stride | Darkness leans closer"
+nsga2_haiku_Fear_7e2df52b,nsga2,haiku,Fear,0.7853,5,"Street empties, eyes blind | Footfalls mirror trembling beat | Silence shatters now"
+ga_haiku_Sorrow_d790fd4d,ga,haiku,Sorrow,0.8353,3,Winter in a box | Photograph weeps at each seam | Drawer stays closed still
+nsga2_haiku_Sorrow_d885a208,nsga2,haiku,Sorrow,0.8206,5,"Memory’s thin skin | Edges curl, a quiet gasp | Drawer stays shut, cold"

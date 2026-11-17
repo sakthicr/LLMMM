@@ -1,0 +1,17 @@
+# Fixed descriptions per emotion for the statistical grid (Section 5).
+#
+# These are the researcher's own authored descriptions — one per emotion,
+# in casual style matching live typing. Reused across all 5 runs per cell
+# to isolate algorithm variance, not prompt variance.
+#
+# ──────────────────────────────────────────────────────────────────────
+# IMPORTANT: Replace these with your own authored descriptions before
+# running the statistical grid. These are placeholders to show the format.
+# The base paper used authored scenarios like "a turbulent ocean environment."
+# ──────────────────────────────────────────────────────────────────────
+
+joy: "sparklers lighting up a backyard on Diwali night"
+sorrow: "a half-eaten plate of food left untouched at a family dinner"
+fear: "the sound of your own footsteps getting louder in an empty stairwell"
+anger: "a red light that won't turn green while the meter keeps running"
+love: "a mother quietly saving the last piece for her child, without being asked"

@@ -1,0 +1,79 @@
+# Reference Haikus for Calibration (Section 10)
+# ~15 real human haikus from established poets.
+# Format: lines starting with # are metadata, poem lines follow.
+# Poems separated by blank lines.
+
+# An old silent pond — Matsuo Bashō
+An old silent pond
+A frog jumps into the pond
+Splash! Silence again
+
+# The light of a candle — Yosa Buson
+The light of a candle
+Is transferred to another candle
+Spring twilight
+
+# Over the wintry — Natsume Sōseki
+Over the wintry
+Forest winds howl in rage
+With no leaves to blow
+
+# A world of dew — Kobayashi Issa
+A world of dew
+And within every dewdrop
+A world of struggle
+
+# In the twilight rain — Matsuo Bashō
+In the twilight rain
+These brilliant hued hibiscus
+A lovely sunset
+
+# The old pond — Matsuo Bashō (variant)
+The old pond
+A frog leaps in
+Sound of the water
+
+# First autumn morning — Matsuo Bashō
+First autumn morning
+The mirror I stare into
+Shows my father's face
+
+# A caterpillar — Matsuo Bashō
+A caterpillar
+This deep in fall
+Still not a butterfly
+
+# On a withered branch — Matsuo Bashō
+On a withered branch
+A crow has alighted
+Nightfall in autumn
+
+# The temple bell stops — Matsuo Bashō
+The temple bell stops
+But I still hear the sound
+Coming from the flowers
+
+# Don't weep insects — Kobayashi Issa
+Don't weep insects
+Lovers stars themselves
+Must part
+
+# A summer river — Masaoka Shiki
+A summer river being crossed
+How pleasing
+With sandals in my hands
+
+# Spring rain — Masaoka Shiki
+Spring rain
+Conveyed under the trees
+In drops
+
+# After killing a spider — Masaoka Shiki
+After killing a spider
+How lonely I feel
+In the cold of night
+
+# I write and erase — Kaga no Chiyo
+I write and erase
+I write and erase and then
+A poppy blooms

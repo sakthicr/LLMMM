@@ -1,0 +1,40 @@
+# Negative Control Limericks for Calibration
+# 5 deliberately weak limericks: correct 5-line AABBA structure
+# and roughly correct syllable counts, but bland, cliched, or
+# incoherent content.
+# Used to verify the fitness pipeline separates quality tiers.
+
+# Bland report — no wit
+There once was a man with a hat
+Who sat in a chair and just sat
+He looked at the wall
+He did nothing at all
+And that is the end of all that
+
+# Generic and flat
+There once was a girl in a town
+Who walked up the street and walked down
+She went to the store
+And came back for more
+And that was her life in that town
+
+# Incoherent (correct form)
+There once was a lamp on a cheese
+Who barked at the wind in the trees
+The fork ate the door
+The ceiling said four
+And tables were friends with the breeze
+
+# Maximum cliche
+There once was a cat on a mat
+Who chased after mouse and a rat
+It ran to the right
+And then out of sight
+And that was the end of the cat
+
+# Emotionally flat
+There once was a person named Jane
+Who walked in the sun and the rain
+She went to her car
+She did not drive far
+And then she went walking again
