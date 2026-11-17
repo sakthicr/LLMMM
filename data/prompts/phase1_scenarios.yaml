@@ -1,0 +1,14 @@
+# The six scenarios used in the Phase I interactive runs, one per
+# poem type x emotion. Copied verbatim from output/logs/human_feedback.csv
+# so the Phase II grid uses exactly the same inputs as Phase I.
+# Both algorithms (GA and NSGA-II) receive the same scenario for a cell.
+
+haiku:
+  fear: "Walking alone down an unlit street, hearing footsteps that match your pace exactly."
+  joy: "a child running barefoot through dewy grass as morning sunlight spills over the hilltop."
+  sorrow: "an old photograph curling at the edges in a drawer nobody opens anymore"
+
+limerick:
+  fear: "a nervous man who hides under the bed during a thunderstorm, only to find something else already hiding there."
+  joy: "a clumsy baker whose wedding cake collapses just before the guests arrive, but the happy mess becomes the most loved dessert of the night."
+  sorrow: "A soldier saying goodbye at the train station, not knowing if he'll return."

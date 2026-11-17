@@ -19,6 +19,11 @@ from src.config import (
     CSV_PER_RUN_SUMMARY,
     CSV_HUMAN_FEEDBACK,
     CSV_EXPERT_REVIEW,
+    CSV_GRID_RUNS,
+    CSV_GRID_CANDIDATES,
+    LOGS_DIR,
+    JUDGE_REPEATS,
+    NORMALIZE_APOSTROPHES,
 )
 from src.ea.common import GenerationLog, Poem
 
@@ -235,11 +240,101 @@ def get_reviewed_poem_ids() -> set[str]:
 
 def log_raw_generator(run_id: str, call_type: str, raw_text: str) -> None:
     """
-    Log full raw generator response to output/logs/raw_generator.log.
+    Log full raw generator response to raw_generator.log in the active
+    logs folder (output/logs in Phase 1, output/logs_phase2 in Phase 2).
     """
     timestamp = datetime.now(timezone.utc).isoformat()
-    log_file = Path("output/logs/raw_generator.log")
+    log_file = LOGS_DIR / "raw_generator.log"
     log_file.parent.mkdir(parents=True, exist_ok=True)
     with open(log_file, "a", encoding="utf-8") as f:
         f.write(f"=== [{timestamp}] run_id={run_id} | call_type={call_type} ===\n")
         f.write(raw_text.rstrip("\n") + "\n\n")
+
+
+# ── Grid logs (statistical grid; one row per run, one row per candidate) ─────
+
+GRID_RUNS_HEADERS = [
+    "timestamp", "run_id", "replicate", "ea", "poem_type", "emotion",
+    "description", "status", "final_F", "Q_bar", "Rhyme", "Structure",
+    "generations_used", "best_poem_id", "best_poem", "n_candidates",
+    "judge_repeats", "normalize_apostrophes", "error",
+]
+
+GRID_CANDIDATES_HEADERS = [
+    "run_id", "ea", "poem_type", "emotion", "poem_id", "generation",
+    "F", "Q_bar", "Rhyme", "Structure", "is_final", "poem_text",
+]
+
+
+def log_grid_run(
+    run_id: str,
+    replicate: int,
+    ea: str,
+    poem_type: str,
+    emotion: str,
+    description: str,
+    status: str,            # "ok" or "failed"
+    best_poem: Poem | None = None,
+    generations_used: int | None = None,
+    n_candidates: int | None = None,
+    error: str = "",
+) -> None:
+    """Append one grid run (successful or failed) to grid_runs.csv."""
+    _ensure_csv(CSV_GRID_RUNS, GRID_RUNS_HEADERS)
+
+    with open(CSV_GRID_RUNS, "a", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            datetime.now(timezone.utc).isoformat(),
+            run_id, replicate, ea, poem_type, emotion, description, status,
+            f"{best_poem.F:.4f}" if best_poem else "",
+            f"{best_poem.Q_bar:.4f}" if best_poem else "",
+            f"{best_poem.Rhyme:.4f}" if best_poem else "",
+            f"{best_poem.Structure:.4f}" if best_poem else "",
+            generations_used if generations_used is not None else "",
+            best_poem.poem_id if best_poem else "",
+            best_poem.text.replace("\n", " | ") if best_poem else "",
+            n_candidates if n_candidates is not None else "",
+            JUDGE_REPEATS,
+            int(NORMALIZE_APOSTROPHES),
+            error,
+        ])
+
+
+def log_grid_candidates(
+    run_id: str,
+    ea: str,
+    poem_type: str,
+    emotion: str,
+    all_poems: list[Poem],
+    best_poem_id: str,
+) -> None:
+    """Append every evaluated candidate of a run to grid_candidates.csv."""
+    _ensure_csv(CSV_GRID_CANDIDATES, GRID_CANDIDATES_HEADERS)
+
+    with open(CSV_GRID_CANDIDATES, "a", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        for p in all_poems:
+            writer.writerow([
+                run_id, ea, poem_type, emotion, p.poem_id, p.generation,
+                f"{p.F:.4f}", f"{p.Q_bar:.4f}", f"{p.Rhyme:.4f}", f"{p.Structure:.4f}",
+                int(p.poem_id == best_poem_id),
+                p.text.replace("\n", " | "),
+            ])
+
+
+def count_completed_grid_runs() -> dict[tuple[str, str, str], int]:
+    """
+    Count successful grid runs already logged, per (ea, poem_type, emotion).
+
+    Used to resume an interrupted grid without repeating finished runs.
+    """
+    counts: dict[tuple[str, str, str], int] = {}
+    if not CSV_GRID_RUNS.exists():
+        return counts
+    with open(CSV_GRID_RUNS, "r", encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            if row.get("status") == "ok":
+                key = (row["ea"], row["poem_type"], row["emotion"].lower())
+                counts[key] = counts.get(key, 0) + 1
+    return counts

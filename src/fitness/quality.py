@@ -10,8 +10,10 @@ Dimensions: emotion alignment, imagery, literary devices, originality, coherence
 import json
 import re
 import logging
+import statistics
 from typing import Optional
 
+from src.config import JUDGE_REPEATS
 from src.api.groq_client import judge_poem_groq
 from src.prompts.judge import build_judge_prompt
 
@@ -26,11 +28,16 @@ QUALITY_DIMENSIONS = [
 ]
 
 
-def _parse_judge_response(raw: str) -> dict[str, int]:
+def _parse_judge_response(raw: str, strict: bool = False) -> Optional[dict[str, int]]:
     """
     Parse the judge model's JSON response into a dict of dimension → score.
 
     Handles common model quirks: markdown fences, trailing text, etc.
+
+    strict=False (Phase I behaviour): an unreadable reply becomes neutral 3s.
+    strict=True  (used when averaging): an unreadable or incomplete reply
+    returns None so the caller can skip that reading instead of averaging
+    in a made-up neutral score.
     """
     text = raw.strip()
 
@@ -43,7 +50,8 @@ def _parse_judge_response(raw: str) -> dict[str, int]:
     # Try direct JSON parse first
     try:
         data = json.loads(text)
-        return _validate_scores(data)
+        if isinstance(data, dict):
+            return _validate_scores(data, strict)
     except json.JSONDecodeError:
         pass
 
@@ -52,7 +60,8 @@ def _parse_judge_response(raw: str) -> dict[str, int]:
     if match:
         try:
             data = json.loads(match.group())
-            return _validate_scores(data)
+            if isinstance(data, dict):
+                return _validate_scores(data, strict)
         except json.JSONDecodeError:
             pass
 
@@ -65,21 +74,30 @@ def _parse_judge_response(raw: str) -> dict[str, int]:
             scores[dim] = int(m.group(1))
 
     if scores:
-        return _validate_scores(scores)
+        return _validate_scores(scores, strict)
 
     logger.warning(f"Failed to parse judge response: {text[:200]}")
+    if strict:
+        return None
     # Return neutral scores
     return {dim: 3 for dim in QUALITY_DIMENSIONS}
 
 
-def _validate_scores(data: dict) -> dict[str, int]:
-    """Ensure all dimension scores are present and in [1, 5]."""
+def _validate_scores(data: dict, strict: bool = False) -> Optional[dict[str, int]]:
+    """
+    Ensure all dimension scores are present and in [1, 5].
+
+    strict=True: a missing or non-numeric dimension makes the whole reading
+    invalid (returns None) instead of being filled in with a neutral 3.
+    """
     result = {}
     for dim in QUALITY_DIMENSIONS:
-        val = data.get(dim, 3)
+        val = data.get(dim, None if strict else 3)
         try:
             val = int(val)
         except (ValueError, TypeError):
+            if strict:
+                return None
             val = 3
         result[dim] = max(1, min(5, val))
     return result
@@ -115,6 +133,9 @@ async def score_quality(
     """
     messages = build_judge_prompt(poem_text, poem_type, target_emotion)
 
+    if JUDGE_REPEATS > 1:
+        return await _score_quality_averaged(messages)
+
     raw_response, served_model, usage = await judge_poem_groq(
         messages=messages,
         temperature=0.3,
@@ -127,6 +148,63 @@ async def score_quality(
     logger.debug(
         f"Q_bar={q_bar:.3f} | sub-scores={sub_scores} | "
         f"judge={served_model} | tokens={usage.get('total_tokens', '?')}"
+    )
+
+    return q_bar, sub_scores, served_model
+
+
+async def _score_quality_averaged(
+    messages: list[dict[str, str]],
+) -> tuple[float, dict[str, float], str]:
+    """
+    Phase 2 judging: ask the judge JUDGE_REPEATS times with the identical
+    prompt and settings, and average the readings.
+
+    The judge was measured to give a different score to the same poem in
+    about three out of four cases, so a single reading is too noisy to rank
+    poems by. Averaging k readings reduces that noise by roughly sqrt(k).
+
+    A reading that cannot be parsed is skipped (not replaced by neutral 3s).
+    If every reading fails, falls back to the Phase I neutral score.
+
+    Returns:
+        (mean q_bar, mean sub-scores per dimension, served_model_id)
+    """
+    readings: list[float] = []
+    parsed: list[dict[str, int]] = []
+    served_model = "unknown"
+
+    for i in range(JUDGE_REPEATS):
+        raw_response, served_model, usage = await judge_poem_groq(
+            messages=messages,
+            temperature=0.3,
+            max_tokens=256,
+        )
+        sub = _parse_judge_response(raw_response, strict=True)
+        if sub is None:
+            logger.warning(
+                f"Judge reading {i + 1}/{JUDGE_REPEATS} unreadable — skipped"
+            )
+            continue
+        parsed.append(sub)
+        readings.append(compute_q_bar(sub))
+
+    if not readings:
+        logger.warning(
+            f"All {JUDGE_REPEATS} judge readings failed — using neutral scores"
+        )
+        sub_scores = {dim: 3 for dim in QUALITY_DIMENSIONS}
+        return compute_q_bar(sub_scores), sub_scores, served_model
+
+    q_bar = round(statistics.mean(readings), 4)
+    sub_scores = {
+        dim: round(statistics.mean(s[dim] for s in parsed), 3)
+        for dim in QUALITY_DIMENSIONS
+    }
+    spread = max(readings) - min(readings)
+    logger.info(
+        f"Q_bar={q_bar:.4f} = mean of {len(readings)}/{JUDGE_REPEATS} judge readings "
+        f"{[f'{r:.2f}' for r in readings]} (spread {spread:.2f}) | judge={served_model}"
     )
 
     return q_bar, sub_scores, served_model

@@ -22,12 +22,27 @@ GENERATION_CAP = 5
 # Expand toward Anger, Love first if budget allows.
 EMOTIONS = ["Joy", "Sorrow", "Fear"]
 
+# ── Experiment phase switch ───────────────────────────────────────────────────
+# Phase 1 (default): the pipeline exactly as used for the Phase I report.
+# Phase 2: set the environment variable EA_PHASE=2 (run_grid.py --phase2 and
+# run_interactive.py --phase2 do this for you). Phase 2 changes ONLY the
+# measurement, never the algorithms:
+#   1. the judge scores each poem JUDGE_REPEATS times and the scores are averaged
+#   2. curly apostrophes are normalised before syllable and rhyme scoring
+#   3. logs are written to output/logs_phase2/ so Phase I logs stay untouched
+EXPERIMENT_PHASE = os.getenv("EA_PHASE", "1").strip()
+PHASE2 = EXPERIMENT_PHASE == "2"
+JUDGE_REPEATS = max(1, int(os.getenv("JUDGE_REPEATS", "3" if PHASE2 else "1")))
+NORMALIZE_APOSTROPHES = os.getenv(
+    "NORMALIZE_APOSTROPHES", "1" if PHASE2 else "0"
+).strip() == "1"
+
 # ── Paths ────────────────────────────────────────────────────────────────────
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 OUTPUT_DIR = PROJECT_ROOT / "output"
-LOGS_DIR = OUTPUT_DIR / "logs"
+LOGS_DIR = OUTPUT_DIR / ("logs_phase2" if PHASE2 else "logs")
 CHARTS_DIR = OUTPUT_DIR / "charts"
 TABLES_DIR = OUTPUT_DIR / "tables"
 
@@ -142,6 +157,8 @@ EA_TYPES = ["ga", "nsga2"]
 # ── Grid Parameters (Section 8) ──────────────────────────────────────────────
 
 GRID_RUNS_PER_CELL = 5
+# Phase 2 grid: the six Phase I scenarios (one per poem type x emotion)
+PHASE2_SCENARIOS_PATH = DATA_DIR / "prompts" / "phase1_scenarios.yaml"
 
 # ── Haiku Structural Rules ───────────────────────────────────────────────────
 
@@ -161,3 +178,5 @@ CSV_PER_GENERATION = LOGS_DIR / "per_generation.csv"
 CSV_PER_RUN_SUMMARY = LOGS_DIR / "per_run_summary.csv"
 CSV_HUMAN_FEEDBACK = LOGS_DIR / "human_feedback.csv"
 CSV_EXPERT_REVIEW = LOGS_DIR / "expert_review.csv"
+CSV_GRID_RUNS = LOGS_DIR / "grid_runs.csv"
+CSV_GRID_CANDIDATES = LOGS_DIR / "grid_candidates.csv"

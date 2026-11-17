@@ -6,6 +6,8 @@ Rhyme scoring using CMUdict phoneme analysis.
 """
 
 import re
+
+from src.fitness.textnorm import normalize_for_scoring
 import logging
 from functools import lru_cache
 
@@ -203,6 +205,7 @@ def score_rhyme(poem_text: str, poem_type: str) -> float:
     Returns:
         Float score in [0, 1].
     """
+    poem_text = normalize_for_scoring(poem_text)
     lines = [line.strip() for line in poem_text.strip().split("\n") if line.strip()]
 
     if poem_type == "haiku":
