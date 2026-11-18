@@ -37,9 +37,8 @@ ax.bar(x + w / 2, ns, w, label="NSGA-II", color=ORANGE, yerr=NOISE_F, capsize=2,
        error_kw=dict(lw=0.7, ecolor="0.25"))
 mg, mn = st.mean(ga), st.mean(ns)
 ax.axhline(mg, color="black", ls="-.", lw=0.8, zorder=1)
-ax.annotate(f"both means $\\approx$ {mg:.3f}\n(GA {mg:.4f}, NSGA-II {mn:.4f})",
-            xy=(4.2, mg), xytext=(0, 16), textcoords="offset points",
-            ha="center", va="bottom", fontsize=7)
+ax.text(4.35, 0.928, f"dash-dot: both means $\\approx$ {mg:.3f}\n(GA {mg:.4f}, NSGA-II {mn:.4f})",
+        ha="center", va="center", fontsize=6.8)
 ax.axvline(2.5, color="0.75", lw=0.7, ls="-", zorder=0)
 ax.set_ylim(0.70, 0.96); ax.set_xticks(x); ax.set_xticklabels(labels)
 for xpos, name in ((1, "Limerick"), (4, "Haiku")):

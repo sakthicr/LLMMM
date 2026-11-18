@@ -6,7 +6,10 @@
   "affil": "M.Tech Artificial Intelligence, Amrita School of Computing, Coimbatore",
   "guide": "Guide: Dr. Bagavathi C., Assistant Professor (Sr. Gd.), Department of Computer Science and Engineering, Amrita Vishwa Vidyapeetham",
   "repo": "https://github.com/sakthicr/LLMMM",
-  "paper": "paper.pdf"
+  "paper": "paper.pdf",
+  "paper_label": "Read the paper (GECCO format)",
+  "paper_alt": "paper_ieee.pdf",
+  "paper_alt_label": "IEEE-format version"
  },
  "summary": [
   "Twelve experiments pit a plain genetic algorithm against NSGA-II inside the same language-model poetry pipeline, with the generator, the judge, the fitness terms and the budget held identical.",

@@ -43,7 +43,11 @@ def pair(a, b, name):
          "GA_wins": sum(1 for x in d if x < -5e-4),
          "NSGA_wins": sum(1 for x in d if x > 5e-4),
          "ties": sum(1 for x in d if abs(x) <= 5e-4)}
-    try:   # 6 pairs: exact Wilcoxon signed-rank, two-sided
+    nz = [x for x in d if abs(x) > 1e-12]
+    r["n_pairs_total"] = len(d)
+    r["n_pairs_untied"] = len(nz)            # zero differences are dropped by the test
+    r["min_attainable_two_sided_p"] = 2.0 / (2 ** len(nz)) if nz else None
+    try:   # exact Wilcoxon signed-rank, two-sided, on the untied pairs only
         w = wilcoxon(a, b)
         r["wilcoxon_p"] = float(w.pvalue); r["wilcoxon_W"] = float(w.statistic)
     except Exception as e:

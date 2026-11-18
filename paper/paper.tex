@@ -1,17 +1,10 @@
 % =====================================================================
 %  Is the Judge the Bottleneck?
 %  A Controlled GA vs NSGA-II Study of LLM-Guided Poem Generation
-%
-%  Compiles two ways, with no edit needed:
-%   * where IEEEtran.cls is installed (Overleaf, TeX Live with
-%     texlive-publishers) it uses the official IEEE conference class;
-%   * otherwise it falls back to article + ieee-fallback.tex, which
-%     imitates the same layout.
+%  IEEE conference format (IEEEtran).
 %  Build: pdflatex paper && bibtex paper && pdflatex paper && pdflatex paper
 % =====================================================================
-\IfFileExists{IEEEtran.cls}
-  {\documentclass[conference]{IEEEtran}\newcommand{\usingIEEEtran}{}}
-  {\documentclass[10pt,twocolumn,letterpaper]{article}}
+\documentclass[conference]{IEEEtran}
 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -20,20 +13,22 @@
 \usepackage{url}
 \usepackage{xcolor}
 \usepackage[hidelinks]{hyperref}
-\ifdefined\usingIEEEtran\else\input{ieee-fallback.tex}\fi
 
 \newcommand{\Qb}{\bar{Q}}
 
-\title{Is the Judge the Bottleneck? A Controlled GA vs NSGA-II\\ Study of
-LLM-Guided Haiku and Limerick Generation}
+\title{Is the Judge the Bottleneck?\\ A Controlled GA vs NSGA-II Study of\\ LLM-Guided Haiku and Limerick Generation}
+
 \author{%
-\begin{tabular}{c@{\hskip 0.10\textwidth}c}
-Bagavathi C. & Sakthi C R \\[0.3ex]
-\textit{Assistant Professor (Sr. Gd.)} & \textit{M.Tech Artificial Intelligence} \\
-\textit{Dept.\ of Computer Science and Engineering} & \textit{Dept.\ of Computer Science and Engineering} \\
-\textit{Amrita School of Computing, Coimbatore} & \textit{Amrita School of Computing, Coimbatore} \\
-\textit{Amrita Vishwa Vidyapeetham, India} & \textit{Amrita Vishwa Vidyapeetham, India}
-\end{tabular}}
+\IEEEauthorblockN{Sakthi C R}
+\IEEEauthorblockA{\textit{M.Tech Artificial Intelligence}\\
+\textit{Amrita School of Computing, Coimbatore}\\
+\textit{Amrita Vishwa Vidyapeetham, India}}
+\and
+\IEEEauthorblockN{Bagavathi C.}
+\IEEEauthorblockA{\textit{Assistant Professor (Sr. Gd.)}\\
+\textit{Dept.\ of Computer Science and Engineering}\\
+\textit{Amrita School of Computing, Coimbatore}\\
+\textit{Amrita Vishwa Vidyapeetham, India}}}
 
 \begin{document}
 \maketitle
@@ -49,7 +44,8 @@ algorithm (GA) with NSGA-II over twelve conditions: two poetic forms (haiku,
 limerick) $\times$ three emotions $\times$ two algorithms. The result is a null
 one. Mean final fitness is $0.8368$ for the GA and $0.8358$ for NSGA-II, a gap of
 $0.0010$ on a scale where one judge step is $0.05$; wins split three to two with
-one tie, and an exact Wilcoxon signed-rank test gives $p=1.0$. Rather than stop
+one tie, and an exact Wilcoxon signed-rank test on the five untied pairs gives
+$p=1.0$ (with so few pairs the test cannot reach $p<0.05$). Rather than stop
 there, we audit the fitness function itself against 53 poems --- 30 published
 human poems, 10 deliberately bad controls and the 13 evolved poems --- each
 scored three times by the same judge. The judge is valid in the coarse sense: it
@@ -78,9 +74,9 @@ and score the candidates with a second model used as a judge
 
 The pattern works. What is missing is a control. Systems in this family, the
 LLM-aided haiku generator of Jobanputra et al.\ \cite{jobanputra2025} among them,
-choose a multi-objective algorithm --- usually NSGA-II \cite{deb2002} --- and
-report that the system produces good poems. They do not report what a simple
-single-objective genetic algorithm would have produced from the same generator,
+choose a multi-objective algorithm --- often NSGA-II \cite{deb2002} --- and
+report that the system produces good poems. To our knowledge they do not report
+what a simple single-objective genetic algorithm would have produced from the same generator,
 the same judge and the same budget. Without that comparison, the contribution of
 the search algorithm cannot be separated from the contribution of the language
 model doing the writing.
@@ -124,13 +120,15 @@ them. Across this literature the search algorithm is typically chosen rather tha
 compared, which is the gap this paper addresses.
 
 \subsection{Poetry generation and evaluation}
-Automatic poetry generation has moved from grammar- and corpus-driven systems
-\cite{manurung2012,wang2021limgen} to neural and instruction-tuned models; Koziev
-and Sinev \cite{koziev2026} survey both the generation and the evaluation side.
+Automatic poetry generation has moved from evolutionary and rule-based systems
+\cite{manurung2012} to neural \cite{wang2021limgen} and instruction-tuned models;
+Koziev and Sinev \cite{koziev2026} survey both the generation and the evaluation
+side.
 Evaluation is the harder half. Porter and Machery \cite{porter2024} found that
 non-expert readers cannot reliably separate model-written poems from human ones
 and tend to prefer the former, while Chakrabarty et al.\ \cite{chakrabarty2024}
-found that expert assessment still separates them clearly. Both findings bear
+found that LLM-written short stories fall short of expert-written ones on a
+structured creativity test. Both findings bear
 directly on Section~\ref{sec:judge}: a preference for model-written verse is a
 documented property of readers as well as of judge models.
 
@@ -196,8 +194,8 @@ Population 6; generation cap 5; stop early if the tracked best $F$ improves by
 less than $0.01$ for two consecutive generations. Generator:
 \texttt{openai/gpt-oss-120b} \cite{openai2025gptoss}. Judge:
 \texttt{qwen/qwen3.8-27b} \cite{qwen2026}. Both are served through Groq
-\cite{groqdocs}. Prompts, temperatures and budgets are identical across the two
-arms. These settings were fixed before the runs and were not changed afterwards.
+\cite{groqdocs}. Prompts and budgets are identical across the two
+arms. These settings were held constant across all twelve accepted runs.
 
 % =====================================================================
 \section{Experimental Setup}
@@ -263,27 +261,30 @@ $0.8206\!\rightarrow\!0.8353$.
 \includegraphics[width=\columnwidth]{fig_ga_vs_nsga.pdf}
 \caption{Final fitness by condition. The two algorithms are separated by
 $0.0010$ on average. Error bars show the judge noise measured in
-Section~\ref{sec:judge} ($\pm 0.0218$ in $F$), which is wider than every
-between-algorithm gap except one.}
+Section~\ref{sec:judge} ($\pm 0.0218$ in $F$); the full span of one bar
+($0.044$) exceeds every between-algorithm gap except the largest ($0.0446$).}
 \label{fig:ga}
 \end{figure}
 
 Table~\ref{tab:results} and Fig.~\ref{fig:ga} give the comparison. Mean final
 fitness is $0.8368$ (GA) against $0.8358$ (NSGA-II), a difference of $0.0010$.
 On the uncorrected figures the difference is $0.0021$ in the same direction. The
-GA wins three cells, NSGA-II two, and one is an exact tie; an exact two-sided
-Wilcoxon signed-rank test over the six matched pairs gives $p = 1.0$. With six
-pairs the smallest attainable two-sided $p$ is $0.031$, so this test could have
-detected a consistent direction had one existed, and did not.
+GA wins three cells, NSGA-II two, and one is an exact tie. An exact two-sided
+Wilcoxon signed-rank test drops the tied pair and is run on the remaining five,
+giving $p = 1.0$. This test has very little power here: with five pairs the
+smallest attainable two-sided $p$ is $0.0625$, so even five unanimous pairs could
+not have reached $p<0.05$. The accurate reading is therefore not ``the test found
+no difference'' but ``six pairs cannot show one''; the sign pattern (three,
+two, one tie) is simply what no effect looks like.
 
 Separating the fitness terms is more informative than the scalar. On judge
 quality $\Qb$, NSGA-II is marginally ahead ($0.875$ versus $0.867$, two wins to
-one with three ties, $p = 0.75$); on structure $S$ the GA is ahead ($0.858$
-versus $0.833$), exactly as the constraint-handling design predicts. The scalar
-$F$ averages these two opposing effects into nothing. This is worth stating
-plainly: the one number the GA was optimising shows no difference, and the
-decomposition shows why --- each algorithm is better at the thing it actually
-selects on.
+one with three ties); on structure $S$ the GA is ahead ($0.858$ versus $0.833$),
+as the constraint-handling design predicts. Both differences are small --- the
+$\Qb$ gap is a sixth of one judge step ($0.05$) --- and we do not test them,
+since three of six $\Qb$ pairs are tied. The pattern is at least consistent with
+each algorithm doing slightly better on the terms it actually selects on, and
+with the scalar $F$ averaging two small opposing effects into almost nothing.
 
 Resource use does not separate the two either. Wall-clock time is dominated by
 rate-limit waiting (roughly $50$--$57$\,s per wait), so it is not a meaningful
@@ -332,7 +333,7 @@ the six evolved limericks scoring above every one of the fifteen canonical ones.
 
 That ordering should not be taken at face value, and the dimension breakdown
 (Table~\ref{tab:dims}) shows why. Coherence is identical between the two groups
-($4.72$ versus $4.73$). The entire gap comes from imagery ($+1.35$), literary
+($4.72$ versus $4.73$). The entire gap comes from imagery ($+1.36$), literary
 devices ($+1.82$) and originality ($+1.59$). A Lear limerick is deliberately
 plain: its effect depends on timing and absurdity, not on metaphor density. The
 rubric has no dimension for humour, wit or comic timing, so it scores the one
@@ -350,7 +351,7 @@ The gap is entirely in ornamentation, not in coherence.}
 \toprule
 Dimension & Evolved & Human & Difference \\
 \midrule
-Imagery           & 4.33 & 2.98 & $+1.35$ \\
+Imagery           & 4.33 & 2.98 & $+1.36$ \\
 Literary devices  & 4.11 & 2.29 & $+1.82$ \\
 Originality       & 3.50 & 1.91 & $+1.59$ \\
 Coherence         & 4.72 & 4.73 & $-0.01$ \\
@@ -377,8 +378,8 @@ This is the finding that reframes the paper. A single judge reading carries
 weight $0.5$ in~\eqref{eq:fitness}, so a standard deviation of $0.0435$ in $\Qb$
 is $\pm 0.0218$ in $F$. The difference we set out to measure is $0.0010$. The
 measurement error is roughly twenty times the effect, and the standard deviation
-of a GA-minus-NSGA-II difference from judge noise alone is $0.031$ --- wider than
-five of the six observed per-cell gaps. Under this noise model, detecting an
+of a GA-minus-NSGA-II difference from judge noise alone is $0.031$ --- larger than
+four of the six observed per-cell gaps, and about equal to a fifth. Under this noise model, detecting an
 effect of the observed size at $80\%$ power would require on the order of $7{,}000$
 matched pairs. No reasonable experiment will do that, which means the right
 response is not more runs but a better instrument.
@@ -428,7 +429,7 @@ be reversed offline, and in one run it touched the majority of evaluated
 candidates.
 
 \textbf{One human verdict per run.} The only human signal collected is a single
-accept/reject decision, made by one of the authors, who was not blind to the
+accept/reject decision, made by the first author, who was not blind to the
 condition. A blind expert rating of the final poems is the obvious next
 measurement and has not yet been done.
 
