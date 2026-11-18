@@ -1,0 +1,300 @@
+{
+ "F_formula_max_abs_error": 5e-05,
+ "F_as_logged": {
+  "mean_GA": 0.83545,
+  "mean_NSGA": 0.83335,
+  "mean_diff": -0.0021000000000000094,
+  "diffs": [
+   0.0308,
+   -0.0446,
+   0.0056,
+   -0.0147,
+   0.025,
+   -0.0147
+  ],
+  "max_abs_diff": 0.04459999999999997,
+  "GA_wins": 3,
+  "NSGA_wins": 3,
+  "ties": 0,
+  "wilcoxon_p": 1.0,
+  "wilcoxon_W": 10.0
+ },
+ "F_corrected": {
+  "mean_GA": 0.8368166666666667,
+  "mean_NSGA": 0.8358,
+  "mean_diff": -0.0010166666666666657,
+  "diffs": [
+   0.0308,
+   -0.0446,
+   -0.0026,
+   -0.0147,
+   0.025,
+   0.0
+  ],
+  "max_abs_diff": 0.04459999999999997,
+  "GA_wins": 3,
+  "NSGA_wins": 2,
+  "ties": 1,
+  "wilcoxon_p": 1.0,
+  "wilcoxon_W": 7.0
+ },
+ "Q_only": {
+  "mean_GA": 0.8666666666666667,
+  "mean_NSGA": 0.875,
+  "mean_diff": 0.00833333333333334,
+  "diffs": [
+   0.05,
+   -0.05,
+   0.0,
+   0.0,
+   0.05,
+   0.0
+  ],
+  "max_abs_diff": 0.050000000000000044,
+  "GA_wins": 1,
+  "NSGA_wins": 2,
+  "ties": 3,
+  "wilcoxon_p": 0.75,
+  "wilcoxon_W": 1.5
+ },
+ "S_only": {
+  "mean_GA": 0.85845,
+  "mean_NSGA": 0.8334333333333334,
+  "mean_diff": -0.025016666666666687,
+  "diffs": [
+   0.0235,
+   -0.0784,
+   0.0224,
+   -0.0588,
+   0.0,
+   -0.0588
+  ],
+  "max_abs_diff": 0.07840000000000003,
+  "GA_wins": 3,
+  "NSGA_wins": 2,
+  "ties": 1,
+  "wilcoxon_p": 0.3125,
+  "wilcoxon_W": 3.0
+ },
+ "n_poems": 53,
+ "n_readings": 159,
+ "groups_all_readings": {
+  "A_human_reference|haiku": {
+   "n": 45,
+   "mean": 0.6042,
+   "sd": 0.1525,
+   "min": 0.1875,
+   "max": 0.875
+  },
+  "A_human_reference|limerick": {
+   "n": 45,
+   "mean": 0.4944,
+   "sd": 0.1318,
+   "min": 0.25,
+   "max": 0.75
+  },
+  "B_negative_control|haiku": {
+   "n": 15,
+   "mean": 0.2708,
+   "sd": 0.1631,
+   "min": 0.0625,
+   "max": 0.5625
+  },
+  "B_negative_control|limerick": {
+   "n": 15,
+   "mean": 0.2417,
+   "sd": 0.0465,
+   "min": 0.1875,
+   "max": 0.3125
+  },
+  "C_ea_generated|haiku": {
+   "n": 21,
+   "mean": 0.7054,
+   "sd": 0.1252,
+   "min": 0.4375,
+   "max": 0.875
+  },
+  "C_ea_generated|limerick": {
+   "n": 18,
+   "mean": 0.7917,
+   "sd": 0.0525,
+   "min": 0.6875,
+   "max": 0.875
+  }
+ },
+ "groups_poem_means": {
+  "A_human_reference|haiku": {
+   "n": 15,
+   "mean": 0.6042,
+   "sd": 0.145,
+   "min": 0.2708,
+   "max": 0.8542
+  },
+  "A_human_reference|limerick": {
+   "n": 15,
+   "mean": 0.4944,
+   "sd": 0.1231,
+   "min": 0.2917,
+   "max": 0.6667
+  },
+  "B_negative_control|haiku": {
+   "n": 5,
+   "mean": 0.2708,
+   "sd": 0.1724,
+   "min": 0.1042,
+   "max": 0.5625
+  },
+  "B_negative_control|limerick": {
+   "n": 5,
+   "mean": 0.2417,
+   "sd": 0.0378,
+   "min": 0.1875,
+   "max": 0.2917
+  },
+  "C_ea_generated|haiku": {
+   "n": 7,
+   "mean": 0.7054,
+   "sd": 0.1223,
+   "min": 0.5417,
+   "max": 0.8542
+  },
+  "C_ea_generated|limerick": {
+   "n": 6,
+   "mean": 0.7917,
+   "sd": 0.0493,
+   "min": 0.7292,
+   "max": 0.8542
+  }
+ },
+ "human_vs_control_haiku": {
+  "n_a": 15,
+  "n_b": 5,
+  "mean_a": 0.6042,
+  "mean_b": 0.2708,
+  "diff": 0.3333,
+  "U": 70.0,
+  "p": 0.005134785089784006,
+  "CLES_a_over_b": 0.9333,
+  "every_a_beats_every_b": false
+ },
+ "ea_vs_control_haiku": {
+  "n_a": 7,
+  "n_b": 5,
+  "mean_a": 0.7054,
+  "mean_b": 0.2708,
+  "diff": 0.4345,
+  "U": 34.0,
+  "p": 0.009242596826337468,
+  "CLES_a_over_b": 0.9714,
+  "every_a_beats_every_b": false
+ },
+ "ea_vs_human_haiku": {
+  "n_a": 7,
+  "n_b": 15,
+  "mean_a": 0.7054,
+  "mean_b": 0.6042,
+  "diff": 0.1012,
+  "U": 73.5,
+  "p": 0.1462585605121594,
+  "CLES_a_over_b": 0.7,
+  "every_a_beats_every_b": false
+ },
+ "human_vs_control_limerick": {
+  "n_a": 15,
+  "n_b": 5,
+  "mean_a": 0.4944,
+  "mean_b": 0.2417,
+  "diff": 0.2528,
+  "U": 74.5,
+  "p": 0.0014012250033500644,
+  "CLES_a_over_b": 0.9933,
+  "every_a_beats_every_b": false
+ },
+ "ea_vs_control_limerick": {
+  "n_a": 6,
+  "n_b": 5,
+  "mean_a": 0.7917,
+  "mean_b": 0.2417,
+  "diff": 0.55,
+  "U": 30.0,
+  "p": 0.007969413024121784,
+  "CLES_a_over_b": 1.0,
+  "every_a_beats_every_b": true
+ },
+ "ea_vs_human_limerick": {
+  "n_a": 6,
+  "n_b": 15,
+  "mean_a": 0.7917,
+  "mean_b": 0.4944,
+  "diff": 0.2972,
+  "U": 90.0,
+  "p": 0.0005205398911830258,
+  "CLES_a_over_b": 1.0,
+  "every_a_beats_every_b": true
+ },
+ "dimensions_haiku": {
+  "imagery": {
+   "EA": 3.857,
+   "human": 3.756,
+   "diff": 0.102
+  },
+  "literary_devices": {
+   "EA": 3.762,
+   "human": 2.889,
+   "diff": 0.873
+  },
+  "originality": {
+   "EA": 3.048,
+   "human": 2.422,
+   "diff": 0.625
+  },
+  "coherence": {
+   "EA": 4.619,
+   "human": 4.6,
+   "diff": 0.019
+  }
+ },
+ "dimensions_limerick": {
+  "imagery": {
+   "EA": 4.333,
+   "human": 2.978,
+   "diff": 1.356
+  },
+  "literary_devices": {
+   "EA": 4.111,
+   "human": 2.289,
+   "diff": 1.822
+  },
+  "originality": {
+   "EA": 3.5,
+   "human": 1.911,
+   "diff": 1.589
+  },
+  "coherence": {
+   "EA": 4.722,
+   "human": 4.733,
+   "diff": -0.011
+  }
+ },
+ "noise": {
+  "n_poems": 53,
+  "mean_within_poem_sd": 0.0435,
+  "median_within_poem_sd": 0.0361,
+  "max_within_poem_sd": 0.1443,
+  "max_within_poem_sd_poem": "A_human_reference | haiku | Spring rain \u2014 Masaoka Shiki",
+  "n_unstable": 39,
+  "pct_unstable": 73.6,
+  "mean_range": 0.079,
+  "max_range": 0.25,
+  "judge_step_4dim": 0.0625,
+  "mean_sd_in_judge_steps": 0.7,
+  "sd_contribution_to_F_single_reading": 0.0218,
+  "sd_contribution_to_F_mean_of_3": 0.0126,
+  "mean_within_poem_sd_EA_only": 0.0322
+ },
+ "power": {
+  "observed_mean_diff_F": 0.00102,
+  "assumed_sd_of_paired_diff": 0.03076,
+  "n_pairs_for_80pct_power": 7177
+ }
+}

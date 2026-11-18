@@ -1,0 +1,51 @@
+% ieee-fallback.tex
+% Loaded only when IEEEtran.cls is NOT installed. It makes the standard
+% article class imitate the IEEE conference layout closely enough to judge
+% length and layout. On Overleaf (or any TeX Live with texlive-publishers)
+% IEEEtran.cls is found and this file is ignored, with no other change.
+\usepackage[letterpaper,top=0.75in,bottom=1.0in,left=0.625in,right=0.625in,
+            columnsep=0.25in]{geometry}
+\usepackage{mathptmx}                      % Times text + math
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{caption}
+
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+
+% --- section headings: I. CENTRED SMALL CAPS, A. Italic, 1) run-in ---------
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\titleformat{\section}[block]{\centering\normalsize\scshape}{\thesection.}{0.5em}{}
+\titleformat{\subsection}[block]{\normalsize\itshape}{\thesubsection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.2ex plus .3ex}{0.8ex}
+\titlespacing*{\subsection}{0pt}{1.0ex plus .3ex}{0.6ex}
+
+% --- captions: Fig. 1.  /  TABLE I ----------------------------------------
+\captionsetup[figure]{font=footnotesize,labelsep=period,name=Fig.,justification=raggedright,singlelinecheck=false}
+\captionsetup[table]{font=footnotesize,labelsep=newline,justification=centering,
+                     name=TABLE,textfont=sc}
+\renewcommand{\thetable}{\Roman{table}}
+
+% --- abstract: bold-italic run-in head, as IEEE sets it --------------------
+\renewenvironment{abstract}
+  {\small\noindent\textbf{\textit{Abstract}}---\ignorespaces}
+  {\par\vspace{0.6ex}}
+\newenvironment{IEEEkeywords}
+  {\small\noindent\textbf{\textit{Index Terms}}---\ignorespaces}
+  {\par\vspace{1ex}}
+
+% --- title block ----------------------------------------------------------
+\makeatletter
+\renewcommand{\maketitle}{%
+  \twocolumn[%
+    \begin{@twocolumnfalse}
+      \begin{center}
+        {\LARGE\@title\par}\vspace{1.6ex}
+        {\large\@author\par}\vspace{2.2ex}
+      \end{center}
+    \end{@twocolumnfalse}%
+  ]%
+}
+\makeatother
+\pagestyle{plain}

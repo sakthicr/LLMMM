@@ -1,0 +1,160 @@
+group,poem_type,title,poem_id,rep,q_bar_4dim,imagery,literary_devices,originality,coherence,logged_F,judge_model
+A_human_reference,haiku,An old silent pond — Matsuo Bashō,,1,0.75,5,4,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,The light of a candle — Yosa Buson,,1,0.75,4,3,4,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,Over the wintry — Natsume Sōseki,,1,0.625,4,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,A world of dew — Kobayashi Issa,,1,0.5,3,3,2,4,,qwen/qwen3.8-27b
+A_human_reference,haiku,In the twilight rain — Matsuo Bashō,,1,0.4375,3,2,2,4,,qwen/qwen3.8-27b
+A_human_reference,haiku,The old pond — Matsuo Bashō (variant),,1,0.625,5,3,1,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,First autumn morning — Matsuo Bashō,,1,0.75,4,3,4,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,A caterpillar — Matsuo Bashō,,1,0.5625,3,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,On a withered branch — Matsuo Bashō,,1,0.5625,4,2,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,The temple bell stops — Matsuo Bashō,,1,0.875,4,5,4,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,Don't weep insects — Kobayashi Issa,,1,0.375,2,3,2,3,,qwen/qwen3.8-27b
+A_human_reference,haiku,A summer river — Masaoka Shiki,,1,0.75,4,3,4,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,Spring rain — Masaoka Shiki,,1,0.4375,3,2,2,4,,qwen/qwen3.8-27b
+A_human_reference,haiku,After killing a spider — Masaoka Shiki,,1,0.4375,3,2,2,4,,qwen/qwen3.8-27b
+A_human_reference,haiku,I write and erase — Kaga no Chiyo,,1,0.5625,4,3,2,4,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man with a beard — Edward Lear,,1,0.625,4,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was a Young Lady of Ryde — Edward Lear,,1,0.25,2,1,1,4,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man in a tree — Edward Lear,,1,0.375,2,2,1,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man of Nantucket — Anonymous,,1,0.375,2,2,1,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,A wonderful bird is the pelican — Dixon Lanier Merritt,,1,0.3125,2,2,1,4,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man who supposed — Edward Lear,,1,0.5,3,2,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was a Young Lady whose chin — Edward Lear,,1,0.4375,3,2,2,4,,qwen/qwen3.8-27b
+A_human_reference,limerick,There once was a man from Blackheath — Anonymous,,1,0.625,4,2,3,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Person of Dutton — Edward Lear,,1,0.3125,2,2,1,4,,qwen/qwen3.8-27b
+A_human_reference,limerick,A flea and a fly in a flue — Anonymous,,1,0.625,3,4,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an old man from Peru — Anonymous,,1,0.5625,4,2,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man of the coast — Edward Lear,,1,0.5,3,2,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man of the Dee — Edward Lear,,1,0.3125,2,2,1,4,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was a Young Lady of Norway — Edward Lear,,1,0.5625,4,2,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man on some rocks — Edward Lear,,1,0.5625,4,2,2,5,,qwen/qwen3.8-27b
+B_negative_control,haiku,Bland weather report,,1,0.25,1,1,1,5,,qwen/qwen3.8-27b
+B_negative_control,haiku,Generic statement,,1,0.1875,1,1,1,4,,qwen/qwen3.8-27b
+B_negative_control,haiku,Incoherent nonsense (valid 5-7-5),,1,0.5625,4,3,4,2,,qwen/qwen3.8-27b
+B_negative_control,haiku,Maximum cliche,,1,0.0625,1,1,1,2,,qwen/qwen3.8-27b
+B_negative_control,haiku,Emotionally flat,,1,0.1875,1,1,1,4,,qwen/qwen3.8-27b
+B_negative_control,limerick,Bland report — no wit,,1,0.1875,1,1,1,4,,qwen/qwen3.8-27b
+B_negative_control,limerick,Generic and flat,,1,0.1875,1,1,1,4,,qwen/qwen3.8-27b
+B_negative_control,limerick,Incoherent (correct form),,1,0.1875,2,2,2,1,,qwen/qwen3.8-27b
+B_negative_control,limerick,Maximum cliche,,1,0.25,2,1,1,4,,qwen/qwen3.8-27b
+B_negative_control,limerick,Emotionally flat,,1,0.3125,2,1,1,5,,qwen/qwen3.8-27b
+C_ea_generated,limerick,GA limerick Fear [accepted],10b32759-9f5,1,0.8125,5,4,4,4,0.8798,qwen/qwen3.8-27b
+C_ea_generated,limerick,NSGA-II limerick Fear [accepted],a63d13eb-742,1,0.75,5,3,3,5,0.9106,qwen/qwen3.8-27b
+C_ea_generated,limerick,GA limerick Joy [accepted],ebe241d6-b99,1,0.8125,4,4,4,5,0.8516,qwen/qwen3.8-27b
+C_ea_generated,limerick,NSGA-II limerick Joy [accepted],dc1f4208-832,1,0.75,4,4,3,5,0.8070,qwen/qwen3.8-27b
+C_ea_generated,limerick,GA limerick Sorrow [accepted],e9a71228-c53,1,0.8125,4,5,4,4,0.8710,qwen/qwen3.8-27b
+C_ea_generated,limerick,NSGA-II limerick Sorrow [accepted],da3255a0-d29,1,0.6875,4,4,3,4,0.8766,qwen/qwen3.8-27b
+C_ea_generated,haiku,GA haiku Fear [accepted],cbbead3b-583,1,0.75,4,4,3,5,0.8000,qwen/qwen3.8-27b
+C_ea_generated,haiku,NSGA-II haiku Fear [accepted],a32548bc-8c4,1,0.6875,4,4,3,4,0.7853,qwen/qwen3.8-27b
+C_ea_generated,haiku,GA haiku Joy [accepted],39c5b5fe-204,1,0.6875,4,3,3,5,0.7750,qwen/qwen3.8-27b
+C_ea_generated,haiku,NSGA-II haiku Joy [accepted],994e2aee-8ae,1,0.5625,3,4,2,4,0.8000,qwen/qwen3.8-27b
+C_ea_generated,haiku,GA haiku Sorrow [accepted],d51ae41b-c18,1,0.875,4,5,4,5,0.8353,qwen/qwen3.8-27b
+C_ea_generated,haiku,NSGA-II haiku Sorrow [accepted],9b04d3ac-306,1,0.875,5,4,4,5,0.8206,qwen/qwen3.8-27b
+C_ea_generated,haiku,GA haiku Joy [REJECTED (attempt 1)],9701be3c-0a7,1,0.625,4,3,2,5,0.7917,qwen/qwen3.8-27b
+A_human_reference,haiku,An old silent pond — Matsuo Bashō,,2,0.75,5,4,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,The light of a candle — Yosa Buson,,2,0.6875,4,3,3,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,Over the wintry — Natsume Sōseki,,2,0.625,4,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,A world of dew — Kobayashi Issa,,2,0.625,3,4,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,In the twilight rain — Matsuo Bashō,,2,0.4375,3,2,2,4,,qwen/qwen3.8-27b
+A_human_reference,haiku,The old pond — Matsuo Bashō (variant),,2,0.6875,5,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,First autumn morning — Matsuo Bashō,,2,0.75,4,3,4,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,A caterpillar — Matsuo Bashō,,2,0.6875,4,3,3,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,On a withered branch — Matsuo Bashō,,2,0.5625,4,2,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,The temple bell stops — Matsuo Bashō,,2,0.875,5,4,4,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,Don't weep insects — Kobayashi Issa,,2,0.5,3,3,2,4,,qwen/qwen3.8-27b
+A_human_reference,haiku,A summer river — Masaoka Shiki,,2,0.625,4,2,3,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,Spring rain — Masaoka Shiki,,2,0.1875,2,1,1,3,,qwen/qwen3.8-27b
+A_human_reference,haiku,After killing a spider — Masaoka Shiki,,2,0.4375,3,2,2,4,,qwen/qwen3.8-27b
+A_human_reference,haiku,I write and erase — Kaga no Chiyo,,2,0.625,4,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man with a beard — Edward Lear,,2,0.6875,4,3,3,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was a Young Lady of Ryde — Edward Lear,,2,0.375,2,2,1,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man in a tree — Edward Lear,,2,0.3125,2,2,1,4,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man of Nantucket — Anonymous,,2,0.625,4,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,A wonderful bird is the pelican — Dixon Lanier Merritt,,2,0.3125,2,2,1,4,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man who supposed — Edward Lear,,2,0.625,4,2,3,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was a Young Lady whose chin — Edward Lear,,2,0.625,4,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There once was a man from Blackheath — Anonymous,,2,0.75,4,3,4,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Person of Dutton — Edward Lear,,2,0.375,2,2,2,4,,qwen/qwen3.8-27b
+A_human_reference,limerick,A flea and a fly in a flue — Anonymous,,2,0.5625,2,4,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an old man from Peru — Anonymous,,2,0.5625,4,2,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man of the coast — Edward Lear,,2,0.5,3,2,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man of the Dee — Edward Lear,,2,0.5,2,2,3,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was a Young Lady of Norway — Edward Lear,,2,0.625,4,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man on some rocks — Edward Lear,,2,0.5,3,2,2,5,,qwen/qwen3.8-27b
+B_negative_control,haiku,Bland weather report,,2,0.25,1,1,1,5,,qwen/qwen3.8-27b
+B_negative_control,haiku,Generic statement,,2,0.1875,1,1,1,4,,qwen/qwen3.8-27b
+B_negative_control,haiku,Incoherent nonsense (valid 5-7-5),,2,0.5625,4,3,4,2,,qwen/qwen3.8-27b
+B_negative_control,haiku,Maximum cliche,,2,0.1875,2,1,1,3,,qwen/qwen3.8-27b
+B_negative_control,haiku,Emotionally flat,,2,0.25,1,1,1,5,,qwen/qwen3.8-27b
+B_negative_control,limerick,Bland report — no wit,,2,0.3125,2,1,1,5,,qwen/qwen3.8-27b
+B_negative_control,limerick,Generic and flat,,2,0.1875,1,1,1,4,,qwen/qwen3.8-27b
+B_negative_control,limerick,Incoherent (correct form),,2,0.25,2,2,3,1,,qwen/qwen3.8-27b
+B_negative_control,limerick,Maximum cliche,,2,0.25,2,1,1,4,,qwen/qwen3.8-27b
+B_negative_control,limerick,Emotionally flat,,2,0.3125,2,1,1,5,,qwen/qwen3.8-27b
+C_ea_generated,limerick,GA limerick Fear [accepted],10b32759-9f5,2,0.875,5,4,4,5,0.8798,qwen/qwen3.8-27b
+C_ea_generated,limerick,NSGA-II limerick Fear [accepted],a63d13eb-742,2,0.8125,5,4,3,5,0.9106,qwen/qwen3.8-27b
+C_ea_generated,limerick,GA limerick Joy [accepted],ebe241d6-b99,2,0.8125,4,4,4,5,0.8516,qwen/qwen3.8-27b
+C_ea_generated,limerick,NSGA-II limerick Joy [accepted],dc1f4208-832,2,0.75,4,4,3,5,0.8070,qwen/qwen3.8-27b
+C_ea_generated,limerick,GA limerick Sorrow [accepted],e9a71228-c53,2,0.875,4,5,4,5,0.8710,qwen/qwen3.8-27b
+C_ea_generated,limerick,NSGA-II limerick Sorrow [accepted],da3255a0-d29,2,0.75,4,5,3,4,0.8766,qwen/qwen3.8-27b
+C_ea_generated,haiku,GA haiku Fear [accepted],cbbead3b-583,2,0.75,4,4,3,5,0.8000,qwen/qwen3.8-27b
+C_ea_generated,haiku,NSGA-II haiku Fear [accepted],a32548bc-8c4,2,0.6875,4,4,3,4,0.7853,qwen/qwen3.8-27b
+C_ea_generated,haiku,GA haiku Joy [accepted],39c5b5fe-204,2,0.6875,4,3,3,5,0.7750,qwen/qwen3.8-27b
+C_ea_generated,haiku,NSGA-II haiku Joy [accepted],994e2aee-8ae,2,0.5625,3,4,2,4,0.8000,qwen/qwen3.8-27b
+C_ea_generated,haiku,GA haiku Sorrow [accepted],d51ae41b-c18,2,0.8125,4,4,4,5,0.8353,qwen/qwen3.8-27b
+C_ea_generated,haiku,NSGA-II haiku Sorrow [accepted],9b04d3ac-306,2,0.875,4,5,4,5,0.8206,qwen/qwen3.8-27b
+C_ea_generated,haiku,GA haiku Joy [REJECTED (attempt 1)],9701be3c-0a7,2,0.6875,4,3,3,5,0.7917,qwen/qwen3.8-27b
+A_human_reference,haiku,An old silent pond — Matsuo Bashō,,3,0.75,5,4,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,The light of a candle — Yosa Buson,,3,0.625,4,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,Over the wintry — Natsume Sōseki,,3,0.625,4,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,A world of dew — Kobayashi Issa,,3,0.5,3,3,2,4,,qwen/qwen3.8-27b
+A_human_reference,haiku,In the twilight rain — Matsuo Bashō,,3,0.5,4,2,2,4,,qwen/qwen3.8-27b
+A_human_reference,haiku,The old pond — Matsuo Bashō (variant),,3,0.6875,5,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,First autumn morning — Matsuo Bashō,,3,0.6875,4,3,3,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,A caterpillar — Matsuo Bashō,,3,0.75,4,4,3,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,On a withered branch — Matsuo Bashō,,3,0.625,4,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,The temple bell stops — Matsuo Bashō,,3,0.8125,4,4,4,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,Don't weep insects — Kobayashi Issa,,3,0.625,3,4,3,4,,qwen/qwen3.8-27b
+A_human_reference,haiku,A summer river — Masaoka Shiki,,3,0.625,4,2,3,5,,qwen/qwen3.8-27b
+A_human_reference,haiku,Spring rain — Masaoka Shiki,,3,0.1875,2,1,1,3,,qwen/qwen3.8-27b
+A_human_reference,haiku,After killing a spider — Masaoka Shiki,,3,0.4375,3,2,2,4,,qwen/qwen3.8-27b
+A_human_reference,haiku,I write and erase — Kaga no Chiyo,,3,0.6875,4,3,3,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man with a beard — Edward Lear,,3,0.625,4,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was a Young Lady of Ryde — Edward Lear,,3,0.25,2,1,1,4,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man in a tree — Edward Lear,,3,0.375,2,2,1,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man of Nantucket — Anonymous,,3,0.4375,2,2,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,A wonderful bird is the pelican — Dixon Lanier Merritt,,3,0.3125,2,2,1,4,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man who supposed — Edward Lear,,3,0.5,3,2,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was a Young Lady whose chin — Edward Lear,,3,0.625,4,3,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There once was a man from Blackheath — Anonymous,,3,0.625,3,2,4,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Person of Dutton — Edward Lear,,3,0.375,3,2,2,3,,qwen/qwen3.8-27b
+A_human_reference,limerick,A flea and a fly in a flue — Anonymous,,3,0.5625,2,4,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an old man from Peru — Anonymous,,3,0.5625,4,2,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man of the coast — Edward Lear,,3,0.5,3,2,2,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man of the Dee — Edward Lear,,3,0.375,2,2,1,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was a Young Lady of Norway — Edward Lear,,3,0.625,4,2,3,5,,qwen/qwen3.8-27b
+A_human_reference,limerick,There was an Old Man on some rocks — Edward Lear,,3,0.625,4,3,2,5,,qwen/qwen3.8-27b
+B_negative_control,haiku,Bland weather report,,3,0.25,1,1,1,5,,qwen/qwen3.8-27b
+B_negative_control,haiku,Generic statement,,3,0.25,1,1,1,5,,qwen/qwen3.8-27b
+B_negative_control,haiku,Incoherent nonsense (valid 5-7-5),,3,0.5625,4,3,4,2,,qwen/qwen3.8-27b
+B_negative_control,haiku,Maximum cliche,,3,0.0625,1,1,1,2,,qwen/qwen3.8-27b
+B_negative_control,haiku,Emotionally flat,,3,0.25,1,1,1,5,,qwen/qwen3.8-27b
+B_negative_control,limerick,Bland report — no wit,,3,0.25,2,1,1,4,,qwen/qwen3.8-27b
+B_negative_control,limerick,Generic and flat,,3,0.1875,1,1,1,4,,qwen/qwen3.8-27b
+B_negative_control,limerick,Incoherent (correct form),,3,0.25,2,2,3,1,,qwen/qwen3.8-27b
+B_negative_control,limerick,Maximum cliche,,3,0.25,2,1,1,4,,qwen/qwen3.8-27b
+B_negative_control,limerick,Emotionally flat,,3,0.25,2,1,1,4,,qwen/qwen3.8-27b
+C_ea_generated,limerick,GA limerick Fear [accepted],10b32759-9f5,3,0.875,5,4,4,5,0.8798,qwen/qwen3.8-27b
+C_ea_generated,limerick,NSGA-II limerick Fear [accepted],a63d13eb-742,3,0.75,5,3,3,5,0.9106,qwen/qwen3.8-27b
+C_ea_generated,limerick,GA limerick Joy [accepted],ebe241d6-b99,3,0.8125,4,4,4,5,0.8516,qwen/qwen3.8-27b
+C_ea_generated,limerick,NSGA-II limerick Joy [accepted],dc1f4208-832,3,0.75,4,4,3,5,0.8070,qwen/qwen3.8-27b
+C_ea_generated,limerick,GA limerick Sorrow [accepted],e9a71228-c53,3,0.8125,4,5,4,4,0.8710,qwen/qwen3.8-27b
+C_ea_generated,limerick,NSGA-II limerick Sorrow [accepted],da3255a0-d29,3,0.75,4,4,3,5,0.8766,qwen/qwen3.8-27b
+C_ea_generated,haiku,GA haiku Fear [accepted],cbbead3b-583,3,0.75,4,4,3,5,0.8000,qwen/qwen3.8-27b
+C_ea_generated,haiku,NSGA-II haiku Fear [accepted],a32548bc-8c4,3,0.6875,4,4,3,4,0.7853,qwen/qwen3.8-27b
+C_ea_generated,haiku,GA haiku Joy [accepted],39c5b5fe-204,3,0.625,4,3,3,4,0.7750,qwen/qwen3.8-27b
+C_ea_generated,haiku,NSGA-II haiku Joy [accepted],994e2aee-8ae,3,0.5,3,3,2,4,0.8000,qwen/qwen3.8-27b
+C_ea_generated,haiku,GA haiku Sorrow [accepted],d51ae41b-c18,3,0.875,4,5,4,5,0.8353,qwen/qwen3.8-27b
+C_ea_generated,haiku,NSGA-II haiku Sorrow [accepted],9b04d3ac-306,3,0.8125,4,4,4,5,0.8206,qwen/qwen3.8-27b
+C_ea_generated,haiku,GA haiku Joy [REJECTED (attempt 1)],9701be3c-0a7,3,0.4375,3,2,2,4,0.7917,qwen/qwen3.8-27b
